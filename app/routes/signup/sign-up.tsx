@@ -1,3 +1,6 @@
+import { FaRegUser, FaUser } from 'react-icons/fa';
+import Button from '~/components/button';
+
 const SignUp = () => {
   return (
     <div className='flex flex-col justify-center items-center bg-background1 text-text w-full h-screen'>
@@ -9,7 +12,11 @@ const SignUp = () => {
           <div className='h-2/3   flex flex-col justify-between py-10 items-center'>
             {/* Logo container */}
             <div className='w-1/3'>
-              <img src='/SVG/Logo_2.svg' alt='logo_svg' className='max-w-full' />
+              <img
+                src='/SVG/Logo_2.svg'
+                alt='logo_svg'
+                className='max-w-full'
+              />
             </div>
             {/* Welcome back container */}
             <div className='flex flex-col items-center  gap-5'>
@@ -19,15 +26,43 @@ const SignUp = () => {
               <p className='text-gray-200 text-sm'>
                 Log in to manage your finances.
               </p>
-              {/* Submit button */}
-              <button className='w-40 h-10 flex items-center cursor-pointer justify-center hover:bg-primary-hover bg-primary rounded-xl px-5 py-2.5'>
-                <p className='text-white uppercase'>Sign In</p>
-              </button>
+              {/* Sign in button */}
+              <Button text='sign in' />
             </div>
           </div>
         </div>
         {/* Right container */}
-        <div className='w-2/3 h-full bg-white rounded-tr-2xl rounded-br-2xl '></div>
+        <div className='w-2/3 h-full flex flex-col gap-5 justify-center items-center bg-white rounded-tr-2xl rounded-br-2xl'>
+          {/* Welcome back text */}
+          <h1 className='font-bold text-4xl'>Create Account</h1>
+          {/* Google Icon */}
+          <div className='w-9'>
+            <img src='/images/Google.png' alt='google-icon' />
+          </div>
+
+          <p className='text-sm text-gray-400'>
+            or use your email for registration
+          </p>
+          {/* Form fields with buttons */}
+          <form>
+            {/* Name */}
+            <div className='flex px-4 text-gray-400 items-center w-80 h-12.5 rounded border border-stroke shadow'>
+              {/* Left Logo */}
+              <div className='mr-3'>
+                <FaRegUser />
+              </div>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                placeholder='Name'
+                className='w-full outline-none text-black bg-transparent'
+              />
+              {/* right text */}
+            </div>
+            {/* Email */}
+          </form>
+        </div>
       </div>
     </div>
   );
