@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { FaEnvelope, FaRegUser } from 'react-icons/fa';
 import { IoMdLock } from 'react-icons/io';
-import { IoEyeOutline } from 'react-icons/io5';
+import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
 import Button from '~/components/button';
 import InputField from '~/components/InputField';
 
 const SignUpForm = () => {
+  // Some states for showing the password feilds
+  const [showPassword, setShowPassword] = useState(true);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(true);
   return (
     <div className='w-2/3 h-full flex flex-col gap-5 justify-center items-center bg-white rounded-tr-2xl rounded-br-2xl'>
       {/* Welcome back text */}
@@ -17,55 +21,43 @@ const SignUpForm = () => {
       <p className='text-sm text-gray-400'>
         or use your email for registration
       </p>
+
       {/* Form fields with buttons */}
       <form className='flex flex-col items-center gap-5'>
         {/* Name */}
-        <div className='flex px-4 text-gray-400 items-center w-80 h-12.5 rounded border border-stroke shadow'>
-          {/* Left Logo */}
-          <div className='mr-3'>
-            <FaRegUser />
-          </div>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            placeholder='Name'
-            className='w-full autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] 
-         autofill:[-webkit-text-fill-color:theme(colors.gray.900)] outline-none text-black bg-transparent'
-          />
-          {/* right text */}
-        </div>
+        <InputField
+          type='text'
+          name='name'
+          placeholder='Name'
+          leftIcon={<FaRegUser />}
+        />
         {/* Email */}
-        <div className='flex px-4 text-gray-400 items-center w-80 h-12.5 rounded border border-stroke shadow'>
-          {/* Left Logo */}
-          <div className='mr-3'>
-            <FaEnvelope />
-          </div>
-          <input
-            type='email'
-            name='email'
-            id='email'
-            placeholder='Email'
-            className='w-full autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] 
-         autofill:[-webkit-text-fill-color:theme(colors.gray.900)] outline-none text-black bg-transparent'
-          />
-          {/* right text */}
-        </div>
+        <InputField
+          type='email'
+          name='email'
+          placeholder='Email'
+          leftIcon={<FaEnvelope />}
+        />
+
         {/* Password */}
         <InputField
-          type='password'
+          type={showPassword ? 'password' : 'text'}
           name='password'
           placeholder='Password'
           leftIcon={<IoMdLock />}
-          rightIcon={<IoEyeOutline />}
+          rightIcon={showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
+          setShow={setShowPassword}
         />
         {/* Confirm Password */}
         <InputField
-          type='password'
+          type={showConfirmPassword ? 'password' : 'text'}
           name='confirmPassword'
           placeholder='Confirm Password'
+          setShow={setShowConfirmPassword}
           leftIcon={<IoMdLock />}
-          rightIcon={<IoEyeOutline />}
+          rightIcon={
+            showConfirmPassword ? <IoEyeOutline /> : <IoEyeOffOutline />
+          }
         />
 
         <Button text='Sign Up'></Button>

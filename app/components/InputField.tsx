@@ -1,7 +1,4 @@
 import type { ReactNode } from 'react';
-import type { IconType } from 'react-icons';
-import { IoMdLock } from 'react-icons/io';
-import { IoEyeOutline } from 'react-icons/io5';
 
 type InputFieldProps = {
   leftIcon: ReactNode;
@@ -9,6 +6,7 @@ type InputFieldProps = {
   name: string;
   placeholder: string;
   rightIcon?: ReactNode;
+  setShow?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const InputField = ({
@@ -17,6 +15,7 @@ const InputField = ({
   name,
   placeholder,
   rightIcon,
+  setShow,
 }: InputFieldProps) => {
   return (
     <div className='flex px-4 text-gray-400 justify-between items-center w-80 h-12.5 rounded border border-stroke shadow'>
@@ -38,7 +37,7 @@ const InputField = ({
           className='cursor-pointer'
           onClick={(e) => {
             e.preventDefault();
-            console.log('Clicked Me!');
+            setShow && setShow((prev) => !prev);
           }}
         >
           {rightIcon}
