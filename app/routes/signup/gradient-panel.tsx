@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import Button from '~/components/button';
 
 const GradientPanel = () => {
@@ -18,7 +19,9 @@ const GradientPanel = () => {
             Log in to manage your finances.
           </p>
           {/* Sign in button */}
-          <Button text='sign in' />
+          <Link to='/login'>
+            <Button text='sign in' />
+          </Link>
         </div>
       </div>
     </div>

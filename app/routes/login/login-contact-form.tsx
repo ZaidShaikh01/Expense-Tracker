@@ -8,7 +8,7 @@ import InputField from '~/components/InputField';
 const LoginForm = () => {
   // Some states for showing the password feilds
   const [showPassword, setShowPassword] = useState(true);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(true);
+
   return (
     <div className='w-2/3 h-full flex flex-col gap-5 justify-center items-center bg-white rounded-tl-2xl rounded-bl-2xl'>
       {/* Welcome back text */}
@@ -39,7 +39,7 @@ const LoginForm = () => {
           rightIcon={showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
           setShow={setShowPassword}
         />
-         <p className='text-sm text-light'>Forgot your password?</p>
+        <p className='text-sm text-light'>Forgot your password?</p>
 
         <Button text='Sign In'></Button>
       </form>

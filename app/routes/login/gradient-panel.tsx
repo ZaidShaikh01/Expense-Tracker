@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import Button from '~/components/button';
 
 const GradientPanel = () => {
@@ -15,11 +16,19 @@ const GradientPanel = () => {
           <h1 className='text-white text-4xl font-bold'>Hello, Friend!</h1>
           {/* Paragraph */}
           <p className='text-gray-200  flex flex-col items-center text-sm'>
-            <div>Enter your personal details and start  </div>
+            <div>Enter your personal details and start </div>
             <div>journey with us</div>
           </p>
           {/* Sign in button */}
-          <Button text='sign up' />
+          <Link to='/signup'>
+            <Button
+              text='sign up'
+              onClick={() => {
+                console.log('Clicke m!');
+              }}
+            />
+          </Link>
+          ;
         </div>
       </div>
     </div>
