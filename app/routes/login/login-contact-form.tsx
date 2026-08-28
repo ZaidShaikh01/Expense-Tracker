@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaEnvelope, FaRegUser } from 'react-icons/fa';
 import { IoMdLock } from 'react-icons/io';
 import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
-import Button from '~/components/button';
+import Button from '~/components/Button';
 import InputField from '~/components/InputField';
 
 const LoginForm = () => {
