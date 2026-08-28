@@ -1,5 +1,6 @@
 import { BsGraphUpArrow } from 'react-icons/bs';
 import type { Route } from './+types/index';
+import SummaryCard from '~/components/Ui/SummaryCard';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,13 +10,13 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <div className='flex flex-col py-10 px-40'>
-    {/* Summary Cards Row */}
-    
+  return (
+    <div className='flex flex-col py-10 px-40'>
+      {/* Summary Cards Row */}
+      <SummaryCard title='Total Balance' totalAmount='45320' gain='21123' />
 
-    {/* Spending Section OverView */}
-    {/* Transaction Table */}
-
-
-  </div>;
+      {/* Spending Section OverView */}
+      {/* Transaction Table */}
+    </div>
+  );
 }
