@@ -1,5 +1,5 @@
 import type { Route } from './+types/index';
-import SummaryCard from '~/components/Ui/SummaryCard';
+import SumamryCards from './SummaryCards';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,6 +9,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  // Summary Cards
   const summaryCards = [
     {
       title: 'Total Balance',
@@ -38,18 +39,12 @@ export default function Home() {
   return (
     <div className='flex flex-col py-10 px-40'>
       {/* Summary Cards Row */}
-      <div className='flex gap-6 flex-wrap shrink'>
-        {summaryCards.map((card) => (
-          <SummaryCard
-            title={card.title}
-            totalAmount={card.totalAmount}
-            netChange={card.netChange}
-            isProfit={card.isProfit}
-          />
-        ))}
-      </div>
+      <SumamryCards summaryCards={summaryCards} />
 
       {/* Spending Section OverView */}
+      {/* Spending Overview Head*/}
+      
+
       {/* Transaction Table */}
     </div>
   );
