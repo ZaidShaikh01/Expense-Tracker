@@ -14,6 +14,7 @@ const SumamryCards = ({ summaryCards }: summaryCardsProps) => {
     <div className='flex gap-6 flex-wrap shrink'>
       {summaryCards.map((card) => (
         <SummaryCard
+          key={card.title}
           title={card.title}
           totalAmount={card.totalAmount}
           netChange={card.netChange}
