@@ -3,7 +3,7 @@ import PillNav from "./Ui/PillNav";
 
 const Header = () => {
   return (
-    <header className='w-full py-9 px-30 bg-white border-b border-b-stroke'>
+    <header className='w-full py-3 px-30 bg-white border-b border-b-stroke'>
       <div className='flex justify-between items-center w-full'>
         {/* Image container */}
         <div className='w-1/12'>
