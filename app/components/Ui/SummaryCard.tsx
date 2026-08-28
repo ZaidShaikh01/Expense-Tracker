@@ -9,7 +9,7 @@ type SummaryCardProps = {
 
 const SummaryCard = ({ title, totalAmount, gain, loss }: SummaryCardProps) => {
   return (
-    <div className='flex p-4 flex-col justify-between bg-white shadow w-65 h-31.25 rounded-2xl '>
+    <div className='flex p-4 flex-col justify-between hover:scale-95 cursor-pointer  transition bg-white shadow w-65 h-31.25 rounded-2xl '>
       {/* Title */}
       <span className='text-sm text-text'>{title}</span>
       {/* Amound */}
