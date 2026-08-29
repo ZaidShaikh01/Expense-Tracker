@@ -182,12 +182,12 @@ type SimpleDropDownProps = {
 export default function SimpleDropdown({ items }: SimpleDropDownProps) {
   // Cuz we want to display the aciton form as the name of the selected option
 
-  const [selectedOption, setSelectedOption] = useState('Select From Option');
+  const [selectedOption, setSelectedOption] = useState('Select');
   return (
     <div className='flex items-center justify-center font-sans p-8'>
       <DropdownMenu
         trigger={
-          <button className='w-30 flex items-center justify-center px-4 py-2 text-sm font-medium text-zinc-700  bg-transparent  border border-stroke  rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-success focus:ring-offset-2 transition-colors'>
+          <button className='w-35 h-10 flex items-center justify-center px-4 py-2 text-sm font-medium text-zinc-700  bg-transparent  border border-stroke  rounded-md shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-success focus:ring-offset-2 transition-colors'>
             {selectedOption}
             <ChevronDown className='ml-2 h-4 w-4' />
           </button>
