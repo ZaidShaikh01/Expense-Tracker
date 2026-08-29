@@ -1,10 +1,7 @@
-import SimpleDropdown, {
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-} from '~/components/Ui/SimpleDropDown';
 import type { Route } from './+types/index';
 import SumamryCards from './SummaryCards';
 import DropdownMenu from '~/components/Ui/SimpleDropDown';
+import SpendingSection from './spending_section';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -44,29 +41,11 @@ export default function Home() {
   return (
     <div className='flex flex-col py-10 px-40'>
       {/* Summary Cards Row */}
-      <SumamryCards  summaryCards={summaryCards} />
+      <SumamryCards summaryCards={summaryCards} />
 
       {/* Spending Section OverView */}
-      
-      <div className='flex justify-between items-center'>
-        <h1 className='text-2xl font-bold' >Spending Overview</h1>
-        <SimpleDropdown
-          items={[
-            'January',
-            'Feburary',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December',
-          ]}
-        />
-      </div>
+      <SpendingSection />
+
       {/* Spending Overview Head*/}
 
       {/* Transaction Table */}
