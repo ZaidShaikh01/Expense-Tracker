@@ -4,7 +4,7 @@ import Header from '~/components/Header';
 
 const LayoutPage = () => {
   return (
-    <div className='flex flex-col justify-between text-black bg-background h-screen'>
+    <div className='flex flex-col justify-between text-black bg-background h-screen overflow-y-scroll'>
       {/* Header Component */}
       <Header />
       <div className='w-full  flex-1'>

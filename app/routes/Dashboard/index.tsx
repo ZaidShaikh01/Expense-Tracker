@@ -22,6 +22,39 @@ const data = [
   { month: 'Jun', income: 60000, expense: 42000 },
 ];
 
+const tableData = [
+  {
+    transaction: 'Netflix Subscription',
+    category: 'Entertainment',
+    date: '1/2/13',
+    Amount: '+7860',
+  },
+  {
+    transaction: 'Subscription',
+    category: 'Entertainment',
+    date: '1/2/13',
+    Amount: '+7860',
+  },
+  {
+    transaction: 'Netflix ',
+    category: 'Entertainment',
+    date: '1/2/13',
+    Amount: '+7860',
+  },
+  {
+    transaction: 'youtube Subscription',
+    category: 'Entertainment',
+    date: '1/2/13',
+    Amount: '+7860',
+  },
+  {
+    transaction: 'Netflix insta',
+    category: 'Entertainment',
+    date: '1/2/13',
+    Amount: '+7860',
+  },
+];
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: 'Expense Tracker' },
@@ -58,16 +91,41 @@ export default function Home() {
     },
   ];
   return (
-    <div className='flex flex-col py-10 px-40'>
+    <div className='flex flex-col gap-10 py-10 px-40'>
       {/* Summary Cards Row */}
       <SumamryCards summaryCards={summaryCards} />
 
       {/* Spending Section OverView */}
       <SpendingSection COLORS={COLORS} data={data} pieData={pieData} />
 
-      {/* Spending Overview Head*/}
-
       {/* Transaction Table */}
+      <div className='flex p-4 gap-4 flex-col justify-between bg-white shadow w-2/3  rounded-2xl'>
+        {/* Heading */}
+        <h1 className='text-2xl font-bold'>Recent Transactions</h1>
+        <a href='#' className='text-blue-400 underline'>
+          View All
+        </a>
+        <table>
+          <thead className='border-b font-bold border-blue-gray-100 bg-[#F8F9FA]'>
+            <tr>
+              <td>Transaction</td>
+              <td>Category</td>
+              <td>Date</td>
+              <td>Amount</td>
+            </tr>
+          </thead>
+          <tbody className='bg-white '>
+            {tableData.map((row) => (
+              <tr className='border-b border-stroke' key={row.transaction}>
+                <td>{row.transaction}</td>
+                <td>{row.category}</td>
+                <td>{row.date}</td>
+                <td>{row.Amount}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
