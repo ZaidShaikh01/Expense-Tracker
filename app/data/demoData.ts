@@ -1,6 +1,6 @@
 import type { Transaction } from '~/types/Transaction';
 
-const januaryData: Transaction = {
+export const januaryData: Transaction = {
   amount: 123,
   category: 'Game',
   date: '1/1/2',
@@ -12,7 +12,7 @@ const januaryData: Transaction = {
   },
 };
 
-const febData: Transaction = {
+export const febData: Transaction = {
   amount: 123,
   category: 'Game',
   date: '1/1/2',
@@ -24,7 +24,7 @@ const febData: Transaction = {
   },
 };
 
-const marchData: Transaction = {
+export const marchData: Transaction = {
   amount: 123,
   category: 'Game',
   date: '1/1/2',
@@ -36,7 +36,7 @@ const marchData: Transaction = {
   },
 };
 
-const aprilData: Transaction = {
+export const aprilData: Transaction = {
   amount: 123,
   category: 'Game',
   date: '1/1/2',
@@ -48,7 +48,7 @@ const aprilData: Transaction = {
   },
 };
 
-const mayData: Transaction = {
+export const mayData: Transaction = {
   amount: 123,
   category: 'Game',
   date: '1/1/2',
