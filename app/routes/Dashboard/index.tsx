@@ -3,6 +3,7 @@ import SumamryCards from './SummaryCards';
 import DropdownMenu from '~/components/Ui/SimpleDropDown';
 import SpendingSection from './spending_section';
 import { useTransactions } from '~/context/TransactionListContext';
+import TransactionTable from './transaction_table';
 
 const pieData = [
   { category: 'Food', amount: 12000 },
@@ -66,11 +67,18 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   const { transactionList, addTransaction } = useTransactions();
 
+  const tableData = transactionList.map((element) => ({
+    transaction: element.name,
+    amount: element.amount,
+    date: element.date,
+    category: element.category,
+  }));
+
   // Example: add a fake transaction
   const handleAdd = () => {
     addTransaction({
       id: crypto.randomUUID(),
-      name: 'Lunch',
+      name: 'adsf',
       amount: 250,
       category: 'Food',
       date: new Date().toISOString(),
@@ -114,33 +122,7 @@ export default function Home() {
       <SpendingSection COLORS={COLORS} data={data} pieData={pieData} />
 
       {/* Transaction Table */}
-      <div className='flex p-4 gap-4 flex-col justify-between bg-white shadow w-2/3  rounded-2xl'>
-        {/* Heading */}
-        <h1 className='text-2xl font-bold'>Recent Transactions</h1>
-        <a href='#' className='text-blue-400 underline'>
-          View All
-        </a>
-        <table>
-          <thead className='border-b font-bold border-blue-gray-100 bg-[#F8F9FA]'>
-            <tr>
-              <td>Transaction</td>
-              <td>Category</td>
-              <td>Date</td>
-              <td>Amount</td>
-            </tr>
-          </thead>
-          <tbody className='bg-white '>
-            {tableData.map((row) => (
-              <tr className='border-b border-stroke' key={row.transaction}>
-                <td>{row.transaction}</td>
-                <td>{row.category}</td>
-                <td>{row.date}</td>
-                <td>{row.Amount}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <TransactionTable handleAdd={handleAdd} tableData={tableData} />
     </div>
   );
 }
