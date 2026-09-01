@@ -2,6 +2,7 @@ import type { Route } from './+types/index';
 import SumamryCards from './SummaryCards';
 import DropdownMenu from '~/components/Ui/SimpleDropDown';
 import SpendingSection from './spending_section';
+import { useTransactions } from '~/context/TransactionListContext';
 
 const pieData = [
   { category: 'Food', amount: 12000 },
@@ -63,6 +64,20 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
+  const { transactionList, addTransaction } = useTransactions();
+
+  // Example: add a fake transaction
+  const handleAdd = () => {
+    addTransaction({
+      id: crypto.randomUUID(),
+      name: 'Lunch',
+      amount: 250,
+      category: 'Food',
+      date: new Date().toISOString(),
+      type: 'expense',
+    });
+  };
+
   // Summary Cards
   const summaryCards = [
     {
