@@ -4,6 +4,7 @@ import DropdownMenu from '~/components/Ui/SimpleDropDown';
 import SpendingSection from './spending_section';
 import { useTransactions } from '~/context/TransactionListContext';
 import TransactionTable from './transaction_table';
+import { totalBalance } from '~/utils/calculations';
 
 const pieData = [
   { category: 'Food', amount: 12000 },
@@ -67,6 +68,8 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   const { transactionList, addTransaction } = useTransactions();
 
+  const totalAccountBalance = totalBalance(transactionList);
+
   const tableData = transactionList.map((element) => ({
     transaction: element.name,
     amount: element.amount,
@@ -78,11 +81,11 @@ export default function Home() {
   const handleAdd = () => {
     addTransaction({
       id: crypto.randomUUID(),
-      name: 'adsf',
+      name: 'asdfgg',
       amount: 250,
       category: 'Food',
       date: new Date().toISOString(),
-      type: 'expense',
+      type: 'income',
     });
   };
 
@@ -90,25 +93,25 @@ export default function Home() {
   const summaryCards = [
     {
       title: 'Total Balance',
-      totalAmount: '43520',
+      totalAmount: totalAccountBalance,
       netChange: '211233',
       isProfit: false,
     },
     {
       title: 'Total Income',
-      totalAmount: '43520',
+      totalAmount: totalAccountBalance,
       netChange: '211233',
       isProfit: true,
     },
     {
       title: 'Total Expenses',
-      totalAmount: '43520',
+      totalAmount: totalAccountBalance,
       netChange: '%23',
       isProfit: false,
     },
     {
       title: 'Saving Rates',
-      totalAmount: '43520',
+      totalAmount: totalAccountBalance,
       netChange: '%23',
       isProfit: true,
     },

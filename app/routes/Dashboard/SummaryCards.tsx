@@ -3,7 +3,7 @@ import SummaryCard from '~/components/Ui/SummaryCard';
 type summaryCardsProps = {
   summaryCards: {
     title: string;
-    totalAmount: string;
+    totalAmount: Number;
     netChange: string;
     isProfit: boolean;
   }[];

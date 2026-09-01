@@ -2,7 +2,7 @@ import { BsGraphDownArrow, BsGraphUpArrow } from 'react-icons/bs';
 
 type SummaryCardProps = {
   title: string;
-  totalAmount: string;
+  totalAmount: Number;
   netChange: string;
   isProfit: boolean;
 };
