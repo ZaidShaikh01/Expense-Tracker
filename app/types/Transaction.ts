@@ -1,6 +1,3 @@
-import type { Expense } from './Expense';
-import type { Income } from './Income';
-
 export type Transaction = {
   id: string;
   name: string;

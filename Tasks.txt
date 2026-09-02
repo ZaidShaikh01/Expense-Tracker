@@ -1,0 +1,9 @@
+Next task is to add a list of all the year data, it will contain tranaciton list from the data
+
+it can be like this
+
+yearData = <MonthlyData>[];
+MonthlyData = {
+    month:string,
+    transactionList: Transaction[]
+}

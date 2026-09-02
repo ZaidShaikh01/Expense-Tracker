@@ -5,6 +5,7 @@ import SpendingSection from './spending_section';
 import { useTransactions } from '~/context/TransactionListContext';
 import TransactionTable from './transaction_table';
 import {
+  getYearData,
   savings,
   totalExpenseBalance,
   totalIncomeBalance,
@@ -83,11 +84,12 @@ export default function Home() {
     category: element.category,
   }));
 
+  console.log(getYearData(transactionList));
   // Example: add a fake transaction
   const handleAdd = () => {
     addTransaction({
       id: crypto.randomUUID(),
-      name: 'asdfgg',
+      name: 'adfgg',
       amount: 250,
       category: 'Food',
       date: new Date().toISOString(),
