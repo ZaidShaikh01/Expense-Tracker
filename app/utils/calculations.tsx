@@ -28,19 +28,40 @@ export const savings = (transactionList: Transaction[]) => {
   }, 0);
 };
 
-export const getYearData = (transactionList: Transaction[]) => {
-  const yearlyData: MonthlyTransaction[] = [];
-  let group;
+export const getYearData = (
+  transactionList: Transaction[]
+): MonthlyTransaction[] => {
+  // 1. Temporary boxes for grouping
+  const groups: { [key: string]: Transaction[] } = {};
 
-  console.log('Before Method', yearlyData);
+  // 2. Put each transaction into the correct month box
   transactionList.forEach((transaction) => {
-    const monthKey = new Date(transaction.date).getMonth();
+    const date = new Date(transaction.date);
 
-   
+    // Example key: "2026-01", "2026-02"
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // 01-12
+    const monthKey = `${year}-${month}`;
 
-    // yearlyData[month] = yearlyData[month].push(transaction);
-    console.log('In Method', monthKey);
+    // If this month box doesn't exist yet, create it
+    if (!groups[monthKey]) {
+      groups[monthKey] = [];
+    }
+
+    // Add transaction into that month
+    groups[monthKey].push(transaction);
   });
+
+  // 3. Convert boxes into final array
+  const yearlyData: MonthlyTransaction[] = Object.keys(groups).map(
+    (monthKey) => ({
+      name: monthKey,
+      transaction: groups[monthKey],
+    })
+  );
+
+  // Optional: sort by month
+  yearlyData.sort((a, b) => a.name.localeCompare(b.name));
 
   return yearlyData;
 };
