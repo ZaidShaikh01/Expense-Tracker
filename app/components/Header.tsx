@@ -20,7 +20,7 @@ const Header = () => {
             logoAlt='Company Logo'
             items={[
               { label: 'Dashboard', href: '/' },
-              { label: 'Transactions', href: '/about' },
+              { label: 'Transactions', href: '/transactions' },
               { label: 'Budget', href: '/services' },
               { label: 'Goals', href: '/contact' },
               { label: 'Reports', href: '/contact' },

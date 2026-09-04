@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 type TransactionTableProps = {
   tableData: {
     transaction: string;
@@ -13,9 +15,9 @@ const TransactionTable = ({ tableData, handleAdd }: TransactionTableProps) => {
     <div className='flex p-4 gap-4 flex-col justify-between bg-white shadow w-2/3  rounded-2xl'>
       {/* Heading */}
       <h1 className='text-2xl font-bold'>Recent Transactions</h1>
-      <a href='#' className='text-blue-400 underline'>
+      <Link to='/transactions' className='text-blue-400 underline'>
         View All
-      </a>
+      </Link>
       <table>
         <thead className='border-b font-bold border-blue-gray-100 bg-[#F8F9FA]'>
           <tr>
