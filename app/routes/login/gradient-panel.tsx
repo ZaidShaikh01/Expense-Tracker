@@ -23,12 +23,10 @@ const GradientPanel = () => {
           <Link to='/signup'>
             <Button
               text='sign up'
-              onClick={() => {
-                console.log('Clicke m!');
-              }}
+             
             />
           </Link>
-          ;
+          
         </div>
       </div>
     </div>

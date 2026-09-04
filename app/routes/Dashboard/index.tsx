@@ -125,7 +125,7 @@ export default function Home() {
     },
   ];
   return (
-    <div className='flex flex-col gap-10 py-10 px-40'>
+    <div>
       {/* Summary Cards Row */}
       <SumamryCards summaryCards={summaryCards} />
 
