@@ -1,4 +1,5 @@
 import Button from '~/components/Button';
+import SimpleDropdown from '~/components/Ui/SimpleDropDown';
 
 const TransactionPage = () => {
   return (
@@ -10,6 +11,73 @@ const TransactionPage = () => {
           text='+ Add Transactions'
           buttonClassName='px-1'
           textClassName='text-xs'
+        />
+      </div>
+      {/* This is dropdown boxes */}
+      <div className='flex'>
+        <SimpleDropdown
+          items={[
+            'January',
+            'Feburary',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ]}
+        />
+        <SimpleDropdown
+          items={[
+            'January',
+            'Feburary',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ]}
+        />
+        <SimpleDropdown
+          items={[
+            'January',
+            'Feburary',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ]}
+        />
+        <SimpleDropdown
+          items={[
+            'January',
+            'Feburary',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ]}
         />
       </div>
     </div>
