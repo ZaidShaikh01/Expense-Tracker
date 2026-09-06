@@ -114,8 +114,8 @@ const TransactionPage = () => {
         />
       </div>
       {/* Table */}
-      <div className='flex gap-4 flex-col justify-between bg-white shadow w-full rounded-2xl  '>
-        <table className='m-2'>
+      <div className='flex flex-col justify-between h-full w-full '>
+        <table className='border-separate shadow  border-spacing-0 rounded-lg overflow-hidden border border-gray-300'>
           <thead className=' rounded-2xl font-bold  bg-[#E6E6E6]'>
             <tr>
               <th className='px-4 py-2 '>Date</th>
@@ -128,16 +128,15 @@ const TransactionPage = () => {
           </thead>
           <tbody className='bg-white text-center '>
             {tableData.map((row) => (
-              <tr className='border-b border-stroke' key={row.transaction}>
-                <td>{row.transaction}</td>
-                <td>{row.category}</td>
-                <td>{row.date}</td>
-                <td>{row.amount}</td>
+              <tr className='border-b  border-stroke' key={row.transaction}>
+                <td className='px-4 py-3'>{row.transaction}</td>
+                <td className='px-4 py-3'>{row.category}</td>
+                <td className='px-4 py-3'>{row.date}</td>
+                <td className='px-4 py-3'>{row.amount}</td>
               </tr>
             ))}
           </tbody>
         </table>
-        {/* <button onClick={handleAdd}>Add element</button> */}
       </div>
     </div>
   );
